@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Right Homes — Full-Service Property &amp; Airbnb Management</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<meta
+  name="description"
+  content="Right Homes manages your property end to end. Guaranteed monthly rent on long-term leases, or a completely hands-off short-term Airbnb operation. Serving Mississauga, Whistler & beyond."
+/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Marcellus&family=Mulish:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================ INTRO ANIMATION ============================ -->
+<div id="intro" class="intro" aria-hidden="true">
+  <div class="intro-stage">
+    <span class="intro-aura" aria-hidden="true"></span>
+    <span class="intro-shimmer" aria-hidden="true"></span>
+    <div class="intro-badge">
+      <svg class="intro-rings" viewBox="0 0 340 340" aria-hidden="true">
+        <defs>
+          <linearGradient id="ringGold" x1="0.1" y1="0" x2="0.9" y2="1">
+            <stop offset="0%" stop-color="#f3dca0" />
+            <stop offset="32%" stop-color="#c79a63" />
+            <stop offset="60%" stop-color="#f0cf8c" />
+            <stop offset="100%" stop-color="#a9762f" />
+          </linearGradient>
+        </defs>
+        <circle class="ring-gold" cx="170" cy="170" r="163" fill="none" stroke="url(#ringGold)" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span class="intro-burst" aria-hidden="true"></span>
+      <img class="intro-logo" src="assets/images/logo.png" alt="Right Homes Property Management" />
+      <span class="intro-shine" aria-hidden="true"></span>
+    </div>
+    <p class="intro-tagline" aria-label="Full-Service Property and Airbnb Management">
+      <span class="iw">Full&#8209;Service</span>
+      <span class="iw">Property</span>
+      <span class="iw">&amp;</span>
+      <span class="iw">Airbnb</span>
+      <span class="iw">Management</span>
+    </p>
+  </div>
+</div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Right Homes — home">
+      <img class="brand-logo" src="assets/images/logo.png" alt="" aria-hidden="true" />
+      <span class="brand-words">
+        <span class="brand-name">Right Homes</span>
+        <span class="brand-sub">Property Management</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#property-management" class="nav-link" data-nav>Property Management</a>
+      <a href="#airbnb-management" class="nav-link" data-nav>Airbnb Management</a>
+      <a href="#contact" class="nav-link nav-cta" data-nav>Contact Us</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Full-Service Property &amp; Airbnb Management</p>
+        <h1 class="hero-title">
+          You do nothing.<br />
+          <em>We manage everything.</em>
+        </h1>
+        <p class="hero-lede">
+          Hand Right Homes the keys and we take care of the rest — we either lease your
+          property long-term and pay you guaranteed rent every month, or run your Airbnb
+          end to end. A truly professional, completely hands-off service while you simply
+          collect the income.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold" data-nav>Get my free earnings estimate</a>
+          <a href="#property-management" class="btn btn-ghost" data-nav>See what we do</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Hands-off for you</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5&#9733;</span>
+            <span class="stat-label">Professional standard</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">Guest support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual: premium property photo + floating earnings card -->
+      <div class="hero-visual reveal">
+        <figure class="hero-photo">
+          <img src="assets/images/property-6.jpg" alt="A premium managed property with a wraparound porch" />
+          <span class="hero-photo-tag"><span class="sh-star">&#9733;</span> Superhost managed</span>
+        </figure>
+
+        <div class="hero-card" id="heroCard" aria-hidden="true">
+          <div class="card-head">
+            <span class="card-eyebrow">This month's payout</span>
+            <span class="card-payout">$4,820</span>
+          </div>
+          <svg class="card-chart" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="url(#barGrad)">
+              <rect x="2"   width="14" rx="3" data-h="46" />
+              <rect x="24"  width="14" rx="3" data-h="58" />
+              <rect x="46"  width="14" rx="3" data-h="40" />
+              <rect x="68"  width="14" rx="3" data-h="66" />
+              <rect x="90"  width="14" rx="3" data-h="54" />
+              <rect x="112" width="14" rx="3" data-h="74" />
+              <rect x="134" width="14" rx="3" data-h="60" />
+              <rect x="156" width="14" rx="3" data-h="84" />
+              <rect x="178" width="14" rx="3" data-h="64" />
+              <rect x="200" width="14" rx="3" data-h="50" />
+              <rect x="222" width="14" rx="3" data-h="72" />
+              <rect x="244" width="14" rx="3" data-h="58" />
+              <rect x="266" width="14" rx="3" data-h="80" />
+              <rect x="288" width="14" rx="3" data-h="68" />
+            </g>
+            <defs>
+              <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d8b888" />
+                <stop offset="100%" stop-color="#b3833f" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-foot">
+            <span class="card-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.96 &middot; 214 reviews</span>
+            <span class="card-occ">96% occupancy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TRUST STRIP ============================ -->
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <span>Whistler, BC</span><i>&bull;</i>
+      <span>Mississauga, ON</span><i>&bull;</i>
+      <span>Greater Toronto Area</span><i>&bull;</i>
+      <span>Guaranteed monthly rent</span><i>&bull;</i>
+      <span>Hotel-grade cleaning</span><i>&bull;</i>
+      <span>Owner-first reporting</span>
+    </div>
+  </div>
+
+  <!-- ===================== 1. PROPERTY MANAGEMENT ===================== -->
+  <section id="property-management" class="section section-light">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-dark">Long-Term Property Management</p>
+          <h2 class="section-title">We lease your property &mdash; and pay you guaranteed rent.</h2>
+          <p class="section-lede">
+            Right Homes takes your property on a long-term lease of <strong>1 to 5 years</strong>.
+            From the day you hand us the keys we manage every detail and deposit a
+            <strong>guaranteed rent into your account every single month</strong> &mdash; whether
+            the unit is occupied or not. No tenant chasing, no late-night calls, no surprises.
+          </p>
+          <ul class="check-list">
+            <li>Guaranteed, fixed monthly income</li>
+            <li>Zero day-to-day involvement</li>
+            <li>Your property professionally maintained</li>
+          </ul>
+        </div>
+        <figure class="section-media">
+          <img src="assets/images/property-5.jpg" alt="A well-kept family home along a quiet, tree-lined street" loading="lazy" />
+        </figure>
+      </div>
+
+      <!-- Lease model: 3 steps -->
+      <h3 class="block-heading reveal">How the lease model works</h3>
+      <div class="steps reveal">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Sign a 1&ndash;5 year lease</h3>
+          <p>We agree a fixed monthly rent and a lease term that suits you. The longer the term, the more stability for both sides.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">&rarr;</div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>We manage everything</h3>
+          <p>Tenants, maintenance, repairs, inspections, cleaning and seasonal upkeep all become our responsibility, not yours.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">&rarr;</div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>You collect guaranteed rent</h3>
+          <p>The same amount lands in your account every month, with clear statements and zero day-to-day involvement from you.</p>
+        </div>
+      </div>
+
+      <!-- Services grid -->
+      <h3 class="block-heading reveal">Everything we handle while we hold the lease</h3>
+      <div class="card-grid reveal">
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.2-.4-.4-2.2z"/></svg>
+          </span>
+          <h4>Routine Maintenance</h4>
+          <p>Scheduled, proactive upkeep that keeps the home in top condition all year round.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.2 7l15.6 10M19.8 7 4.2 17"/><path d="M12 2 9.5 4.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5"/></svg>
+          </span>
+          <h4>Snow Clearing</h4>
+          <p>Driveways, walkways and entries cleared through every Canadian winter, safely and on time.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5 4 4"/><path d="M3 21v-3l11-11 3 3L6 21H3z"/><path d="M14.5 6.5 17.5 3.5a2.1 2.1 0 0 1 3 3l-3 3"/></svg>
+          </span>
+          <h4>Repairs</h4>
+          <p>Fast, vetted trades for everything from a dripping tap to major fixes &mdash; coordinated entirely by us.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          </span>
+          <h4>Inspections</h4>
+          <p>Regular documented inspections so the property's condition is always known and protected.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/><circle cx="12" cy="12" r="10" opacity=".25"/></svg>
+          </span>
+          <h4>Tenant Screening</h4>
+          <p>Careful vetting and ongoing tenant relations &mdash; though with guaranteed rent, that's our concern, not yours.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l4-2 4 2 4-2 4 2v11" opacity=".2"/><path d="M7 6V3h10v3"/><path d="M9 10v6M15 10v6"/></svg>
+          </span>
+          <h4>Lawn &amp; Grounds</h4>
+          <p>Mowing, landscaping and seasonal yard care that keep curb appeal &mdash; and value &mdash; high.</p>
+        </article>
+      </div>
+
+      <!-- Value-adds: alternating image + text -->
+      <div class="split reveal">
+        <figure class="split-media">
+          <img src="assets/images/property-3.jpg" alt="A beautifully maintained heritage home" loading="lazy" />
+        </figure>
+        <div class="split-text">
+          <span class="split-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>We protect your most valuable asset</h3>
+          <p>
+            Your property is likely the biggest investment you'll ever make. By keeping up with
+            regular, preventative maintenance we <strong>extend the lifespan of the home</strong>,
+            protect its market value and head off the costly damage that neglect creates &mdash;
+            so it's worth more, not less, when you get it back.
+          </p>
+        </div>
+      </div>
+
+      <div class="split reverse reveal">
+        <figure class="split-media">
+          <img src="assets/images/property-2.jpg" alt="A charming managed property in good standing" loading="lazy" />
+        </figure>
+        <div class="split-text">
+          <span class="split-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5z"/><path d="M8 8h6M8 12h8M8 16h5"/></svg>
+          </span>
+          <h3>Clear reporting, ready for tax season</h3>
+          <p>
+            We provide clean <strong>monthly and annual financial statements</strong> so tracking
+            your earnings is effortless. Everything is organised, itemised and ready &mdash; keeping
+            you in control and <strong>prepared for tax season</strong> without the paperwork headache.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. AIRBNB MANAGEMENT ===================== -->
+  <section id="airbnb-management" class="section section-dark">
+    <div class="container">
+      <div class="section-intro reverse reveal">
+        <div class="section-head">
+          <p class="eyebrow">Short-Term Airbnb Management</p>
+          <h2 class="section-title light">Your Airbnb &mdash; run flawlessly, without you lifting a finger.</h2>
+          <p class="section-lede light">
+            This one's different from our leasing model: <strong>there's no lease involved</strong>.
+            You stay the owner of your Airbnb business and keep the income &mdash; Right Homes simply
+            becomes your professional operations partner, handling the cleaning, guests, pricing and
+            day-to-day running so you get the returns without the work.
+          </p>
+          <ul class="check-list light">
+            <li>You keep ownership &amp; the income</li>
+            <li>Hotel-grade turnovers, every stay</li>
+            <li>Higher occupancy, smarter pricing</li>
+          </ul>
+        </div>
+        <figure class="section-media">
+          <img src="assets/images/property-4.jpg" alt="A stylish, contemporary short-term rental at dusk" loading="lazy" />
+        </figure>
+      </div>
+
+      <!-- Marquee features: alternating image + text -->
+      <div class="split reveal">
+        <figure class="split-media">
+          <img src="assets/images/property-1.jpg" alt="A warm, inviting cabin ready for guests at golden hour" loading="lazy" />
+        </figure>
+        <div class="split-text">
+          <span class="split-icon light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8z"/></svg>
+          </span>
+          <h3 class="light">5-star cleaning &amp; maintenance</h3>
+          <p class="light">
+            A hotel-level clean after every single stay. Our professional teams work to strict
+            checklists so the property is spotless top to bottom, and we handle all the laundry
+            and fresh linens &mdash; the details that turn first-time guests into five-star reviews.
+          </p>
+        </div>
+      </div>
+
+      <div class="split reverse reveal">
+        <figure class="split-media">
+          <img src="assets/images/property-6.jpg" alt="A photogenic home presented for a premium listing" loading="lazy" />
+        </figure>
+        <div class="split-text">
+          <span class="split-icon light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          </span>
+          <h3 class="light">Listings that are impossible to scroll past</h3>
+          <p class="light">
+            Professional photography paired with captivating, <strong>SEO-optimized descriptions</strong>
+            that rank higher and convert browsers into bookings. We position your listing to stay
+            in front of the right guests and keep your occupancy high all year.
+          </p>
+        </div>
+      </div>
+
+      <!-- Remaining features grid -->
+      <div class="feature-grid reveal">
+        <article class="feature">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 8h4v4"/></svg>
+          </span>
+          <div class="feature-text">
+            <h4>Dynamic Pricing</h4>
+            <p>We analyse market trends, local events and seasonality to adjust your nightly rates &mdash; capturing every dollar of demand and keeping earnings strong year-round.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h8M8 13h5"/></svg>
+          </span>
+          <div class="feature-text">
+            <h4>Guest Comms &amp; 24/7 Support</h4>
+            <p>Prompt, professional replies, seamless smart-code entry at any hour, and a 24-hour support line with emergency response throughout every stay.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l7-3 7 3"/><path d="M5 7l-2 6a4 4 0 0 0 8 0z" opacity=".4"/><path d="M13 7l-2 6a4 4 0 0 0 8 0z" opacity=".4"/></svg>
+          </span>
+          <div class="feature-text">
+            <h4>Compliance Support</h4>
+            <p>Short-term rental rules never stop changing. We navigate municipal regulations and evolving city laws so your rental stays fully compliant, licensed and legal.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- DIY vs Right Homes comparison -->
+      <h3 class="block-heading light reveal">Do it yourself, or hand it to Right Homes</h3>
+      <div class="compare reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col">What it takes</th>
+              <th scope="col">Doing it yourself</th>
+              <th scope="col" class="col-rh">With Right Homes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Professional photos &amp; SEO listing</th><td class="no">Hours &amp; guesswork</td><td class="yes">Done for you</td></tr>
+            <tr><th scope="row">Nightly price adjustments</th><td class="no">Manual &amp; static</td><td class="yes">Dynamic &amp; automated</td></tr>
+            <tr><th scope="row">Guest messaging</th><td class="no">On your phone, all day</td><td class="yes">24/7 by our team</td></tr>
+            <tr><th scope="row">Cleaning, laundry &amp; linens</th><td class="no">You arrange it</td><td class="yes">Hotel-grade, every stay</td></tr>
+            <tr><th scope="row">Maintenance &amp; emergencies</th><td class="no">Your problem at 2am</td><td class="yes">Handled &amp; on call</td></tr>
+            <tr><th scope="row">Regulatory compliance</th><td class="no">Up to you to track</td><td class="yes">We keep you legal</td></tr>
+            <tr><th scope="row">Your time spent</th><td class="no">Hours every week</td><td class="yes">Practically none</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CONTACT & LOCATION ===================== -->
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Contact &amp; Location</p>
+        <h2 class="section-title light">Let's talk about your property.</h2>
+        <p class="section-lede light">
+          Tell us a little about your home and what you're looking for. We'll come back with a
+          free, no-obligation estimate of what Right Homes can do for you.
+        </p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <!-- Details -->
+        <div class="contact-info">
+          <ul class="contact-list">
+            <li>
+              <span class="ci-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <h4>Office &amp; mailing address</h4>
+                <p>5684 River Grove Ave,<br />Mississauga, ON L5M 3V7</p>
+              </div>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+14377765258" class="contact-link">+1 (437) 776-5258</a><br /><a href="tel:+16479757362" class="contact-link">+1 (647) 975-7362</a></p>
+              </div>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@righthomes.ca" class="contact-link">hello@righthomes.ca</a> <span class="todo">&larr; client to confirm</span></p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="map-wrap">
+            <iframe
+              title="Right Homes office location map"
+              src="https://www.google.com/maps?q=5684+River+Grove+Ave,+Mississauga,+ON+L5M+3V7&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">I'm interested in</label>
+            <select id="service" name="service">
+              <option value="Long-term property management">Long-term property management (guaranteed rent)</option>
+              <option value="Airbnb / short-term management">Airbnb / short-term management</option>
+              <option value="Not sure yet">Not sure yet — help me decide</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">About your property</label>
+            <textarea id="message" name="message" rows="4" placeholder="Address or area, bedrooms, and anything you'd like us to know."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">Request my free estimate</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img class="footer-logo" src="assets/images/logo.png" alt="Right Homes Property Management" />
+      <p class="footer-tag">Full-service property &amp; Airbnb management across Whistler, Mississauga &amp; the Greater Toronto Area.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <span class="footer-links-title">Explore</span>
+      <a href="#property-management" data-nav>Property Management</a>
+      <a href="#airbnb-management" data-nav>Airbnb Management</a>
+      <a href="#contact" data-nav>Contact Us</a>
+    </nav>
+    <div class="footer-meta">
+      <span class="footer-links-title">Office</span>
+      <p>5684 River Grove Ave,<br />Mississauga, ON L5M 3V7</p>
+      <p><a href="mailto:hello@righthomes.ca" class="contact-link">hello@righthomes.ca</a></p>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Right Homes. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

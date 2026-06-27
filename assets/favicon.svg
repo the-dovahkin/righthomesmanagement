@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620">
+  <defs>
+    <linearGradient id="fSteel" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#aebfc5"></stop>
+      <stop offset="44%" stop-color="#46606a"></stop>
+      <stop offset="100%" stop-color="#1c2e36"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="620" rx="132" fill="#f5f0e7"></rect>
+  <g transform="translate(20,86)">
+    <polyline points="78,262 300,86 470,222" fill="none" stroke="url(#fSteel)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"></polyline>
+    <text x="296" y="452" text-anchor="middle" fill="url(#fSteel)" font-family="Georgia,&#39;Times New Roman&#39;,serif" font-weight="700" font-size="300" letter-spacing="-8">RH</text>
+    <line x1="476" y1="338" x2="476" y2="166" stroke="url(#fSteel)" stroke-width="34" stroke-linecap="round"></line>
+    <polygon points="476,104 442,168 510,168" fill="url(#fSteel)"></polygon>
+    <line x1="330" y1="336" x2="484" y2="151" stroke="url(#fSteel)" stroke-width="34" stroke-linecap="round"></line>
+    <polygon points="512,118 506,168 464,132" fill="url(#fSteel)"></polygon>
+  </g>
+</svg>
