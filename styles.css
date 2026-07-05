@@ -10,6 +10,10 @@
   --teal-700: #1c615a;
   --teal-600: #2a7068;
 
+  /* accent glow + chrome tint (themeable) */
+  --glow: 42, 112, 104;
+  --header-tint: 9, 51, 48;
+
   --gold:      #c79a63;
   --gold-soft: #d8b888;
   --gold-deep: #b3833f;
@@ -38,6 +42,192 @@
   --font-sans: "Mulish", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   PALETTE THEMES  (brand dark family + accent glow; gold stays)
+   ============================================================ */
+/* Burgundy + gold */
+body[data-theme="burgundy"] {
+  --teal-950: #2a0a12;
+  --teal-900: #3a0f1a;
+  --teal-800: #521623;
+  --teal-700: #6a1e2f;
+  --teal-600: #8a2d40;
+  --glow: 138, 45, 64;
+  --header-tint: 42, 10, 18;
+  --ink: #3a0f1a;
+  --ink-soft: #6b4750;
+  --ink-faint: #8f6b73;
+  --line: #e7dccf;
+}
+/* Richer emerald + gold */
+body[data-theme="emerald"] {
+  --teal-950: #04241d;
+  --teal-900: #063528;
+  --teal-800: #0a4d38;
+  --teal-700: #106448;
+  --teal-600: #188a5f;
+  --glow: 23, 138, 95;
+  --header-tint: 5, 40, 31;
+  --ink: #0d2b22;
+  --ink-soft: #3d5f54;
+  --ink-faint: #6f8a80;
+  --line: #e2ded0;
+}
+/* True red + gold */
+body[data-theme="red"] {
+  --teal-950: #3a0908;
+  --teal-900: #520d0a;
+  --teal-800: #6d130d;
+  --teal-700: #8c1a12;
+  --teal-600: #b0281c;
+  --glow: 176, 40, 28;
+  --header-tint: 58, 9, 8;
+  --ink: #3a0f0c;
+  --ink-soft: #6b4844;
+  --ink-faint: #916b67;
+  --line: #ecdcd6;
+}
+/* Oxblood + gold */
+body[data-theme="oxblood"] {
+  --teal-950: #2b0a08;
+  --teal-900: #3a0d0a;
+  --teal-800: #4e130e;
+  --teal-700: #641c14;
+  --teal-600: #7d2a1e;
+  --glow: 125, 42, 30;
+  --header-tint: 43, 10, 8;
+  --ink: #3a120c;
+  --ink-soft: #6b4a42;
+  --ink-faint: #916d64;
+  --line: #ead9d1;
+}
+
+/* ============================================================
+   PALETTE SWITCHER (preview control)
+   ============================================================ */
+.theme-switch {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+}
+.theme-switch .ts-label {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6f8682;
+  margin-right: 2px;
+}
+.theme-switch button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.18s var(--ease), border-color 0.18s;
+}
+.theme-switch button:hover { transform: scale(1.12); }
+.theme-switch button[aria-pressed="true"] { border-color: #14322f; transform: scale(1.12); }
+.ts-teal     { background: linear-gradient(135deg, #2a7068, #07302d); }
+.ts-burgundy { background: linear-gradient(135deg, #8a2d40, #2a0a12); }
+.ts-emerald  { background: linear-gradient(135deg, #188a5f, #04241d); }
+.ts-red      { background: linear-gradient(135deg, #b0281c, #3a0908); }
+@media (max-width: 520px) {
+  .theme-switch .ts-label { display: none; }
+  .theme-switch { left: 12px; bottom: 12px; padding: 8px 10px; gap: 8px; }
+}
+
+/* ============================================================
+   STICKY CONTACT WIDGET (bottom-right FAB + popup)
+   ============================================================ */
+.contact-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.contact-fab__options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity 0.24s var(--ease), transform 0.24s var(--ease);
+}
+.contact-fab.open .contact-fab__options {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.contact-fab__opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 17px 11px 14px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+  transform: translateX(4px);
+  transition: transform 0.16s var(--ease), box-shadow 0.16s;
+}
+.contact-fab__opt:hover { transform: translateX(0) scale(1.03); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34); }
+.contact-fab__opt svg { width: 22px; height: 22px; flex: none; }
+.contact-fab__opt.is-whatsapp { background: #25d366; }
+.contact-fab__opt.is-mail { background: linear-gradient(150deg, var(--gold), var(--gold-deep)); }
+.contact-fab__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  background: linear-gradient(155deg, var(--teal-700), var(--teal-900));
+  box-shadow: 0 12px 30px rgba(var(--glow), 0.4), 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s var(--ease), box-shadow 0.18s;
+}
+.contact-fab__toggle:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(var(--glow), 0.5), 0 6px 14px rgba(0, 0, 0, 0.3); }
+.contact-fab__toggle svg { width: 20px; height: 20px; flex: none; transition: transform 0.28s var(--ease); }
+.contact-fab.open .contact-fab__toggle svg.ic-chat { transform: rotate(90deg) scale(0.8); opacity: 0; position: absolute; }
+.contact-fab__toggle .ic-close { display: none; }
+.contact-fab.open .contact-fab__toggle .ic-chat { display: none; }
+.contact-fab.open .contact-fab__toggle .ic-close { display: inline-block; }
+.contact-fab__label--open { display: none; }
+.contact-fab.open .contact-fab__label { display: none; }
+.contact-fab.open .contact-fab__label--open { display: inline; }
+@media (max-width: 520px) {
+  .contact-fab { right: 14px; bottom: 14px; }
+  .contact-fab__toggle { padding: 13px 18px; font-size: 0.92rem; }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,7 +353,7 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid transparent;
 }
 .site-header.scrolled {
-  background: rgba(9, 51, 48, 0.92);
+  background: rgba(var(--header-tint), 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: rgba(199, 154, 99, 0.22);
@@ -233,15 +423,17 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   font-size: 0.96rem;
   padding: 10px 16px;
+  border: 1.5px solid rgba(245, 240, 231, 0.38);
   border-radius: 999px;
   white-space: nowrap;
-  transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
-.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.08); border-color: rgba(245, 240, 231, 0.7); }
 .nav-cta {
   background: linear-gradient(150deg, var(--gold), var(--gold-deep));
   color: #fff;
   font-weight: 600;
+  border-color: transparent;
   box-shadow: 0 6px 18px rgba(179, 131, 63, 0.32);
 }
 .nav-cta:hover { background: var(--gold-deep); color: #fff; }
@@ -282,8 +474,8 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1100px 600px at 78% 6%, rgba(42, 112, 104, 0.55), transparent 60%),
-    radial-gradient(900px 700px at 8% 100%, rgba(7, 48, 45, 0.9), transparent 55%),
+    radial-gradient(1100px 600px at 78% 6%, rgba(var(--glow), 0.55), transparent 60%),
+    radial-gradient(900px 700px at 8% 100%, rgba(var(--header-tint), 0.9), transparent 55%),
     linear-gradient(135deg, var(--teal-800) 0%, var(--teal-900) 45%, var(--teal-950) 100%);
   z-index: -1;
 }
@@ -488,7 +680,7 @@ a { color: inherit; text-decoration: none; }
 .section-light { background: var(--paper); }
 .section-dark {
   background:
-    radial-gradient(900px 500px at 85% 0%, rgba(42, 112, 104, 0.4), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(var(--glow), 0.4), transparent 60%),
     linear-gradient(160deg, var(--teal-900), var(--teal-950));
   color: var(--cream);
 }
@@ -755,7 +947,7 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .section-contact {
   background:
-    radial-gradient(800px 500px at 15% 0%, rgba(42, 112, 104, 0.45), transparent 60%),
+    radial-gradient(800px 500px at 15% 0%, rgba(var(--glow), 0.45), transparent 60%),
     linear-gradient(160deg, var(--teal-900), var(--teal-950));
   color: var(--cream);
 }
@@ -820,7 +1012,7 @@ a { color: inherit; text-decoration: none; }
   font-family: inherit;
   font-size: 1rem;
   color: var(--cream);
-  background: rgba(7, 48, 45, 0.55);
+  background: rgba(var(--header-tint), 0.55);
   border: 1.5px solid rgba(245, 240, 231, 0.18);
   border-radius: var(--radius-sm);
   padding: 13px 15px;
@@ -831,7 +1023,7 @@ a { color: inherit; text-decoration: none; }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
   border-color: var(--gold-soft);
-  background: rgba(7, 48, 45, 0.8);
+  background: rgba(var(--header-tint), 0.8);
 }
 .field select option { color: #14322f; }
 .form-note { font-size: 0.92rem; min-height: 1em; text-align: center; }
@@ -1152,7 +1344,7 @@ body.intro-active { overflow: hidden; }
     align-items: stretch;
     gap: 6px;
     padding: 18px 22px 26px;
-    background: rgba(9, 51, 48, 0.98);
+    background: rgba(var(--header-tint), 0.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(199, 154, 99, 0.22);

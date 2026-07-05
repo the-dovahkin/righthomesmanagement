@@ -166,7 +166,7 @@
   /* ---- Contact form: validate + compose a mailto ---- */
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
-  var COMPANY_EMAIL = "hello@righthomes.ca"; // TODO: client to confirm
+  var COMPANY_EMAIL = "righthomesmanagement@gmail.com";
 
   if (form) {
     form.addEventListener("submit", function (e) {
