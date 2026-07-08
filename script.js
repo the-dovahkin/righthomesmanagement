@@ -163,10 +163,10 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---- Contact form: validate + compose a mailto ---- */
+  /* ---- Contact form: validate + send via Web3Forms ---- */
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
-  var COMPANY_EMAIL = "righthomesmanagement@gmail.com";
+  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -190,23 +190,50 @@
         return;
       }
 
-      var subject = "Estimate request — " + service;
-      var body =
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Phone: " + (phone || "—") + "\n" +
-        "Interested in: " + service + "\n\n" +
-        "About the property:\n" + (message || "—");
+      /* Disable button + show loading state */
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      note.textContent = "";
+      note.className = "form-note";
 
-      window.location.href =
-        "mailto:" + COMPANY_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
+      /* Build form data */
+      var formData = new FormData(form);
+      var object = {};
+      formData.forEach(function (value, key) { object[key] = value; });
 
-      note.textContent = "Thanks, " + name.split(" ")[0] +
-        "! Your email app is opening — hit send and we'll be in touch shortly.";
-      note.classList.add("ok");
-      form.reset();
+      /* Update subject with service type */
+      object.subject = "Estimate request — " + service;
+
+      var json = JSON.stringify(object);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: json
+      })
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          if (data.success) {
+            note.textContent = "Thanks, " + name.split(" ")[0] +
+              "! Your request has been sent — we'll be in touch shortly.";
+            note.classList.add("ok");
+            form.reset();
+          } else {
+            note.textContent = data.message || "Something went wrong. Please try again or email us directly.";
+            note.classList.add("err");
+          }
+        })
+        .catch(function () {
+          note.textContent = "Couldn't send your request — please check your internet connection or email us directly.";
+          note.classList.add("err");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Request my free estimate";
+        });
     });
   }
 })();
