@@ -140,6 +140,17 @@
 
     document.body.classList.add("intro-active");
 
+    var logoImg = intro.querySelector(".intro-logo");
+    if (logoImg) {
+      var markLogoReady = function () { logoImg.classList.add("is-ready"); };
+      if (logoImg.complete && logoImg.naturalWidth !== 0) {
+        markLogoReady();
+      } else {
+        logoImg.addEventListener("load", markLogoReady, { once: true });
+        logoImg.addEventListener("error", markLogoReady, { once: true });
+      }
+    }
+
     function finish() {
       if (intro.classList.contains("done")) return;
       intro.classList.add("done");
